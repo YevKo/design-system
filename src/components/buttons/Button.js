@@ -1,4 +1,4 @@
-import { PropTypes } from "prop-types";
+import className from "classnames";
 
 function Button({
     children,
@@ -8,22 +8,18 @@ function Button({
     rounded,
     ghost
 }) {
-    let classes = "px-5 py-3 text-base font-medium transition duration-200";
-
-    if (primary) {
-        classes = classes + " border-2 border-blue-800 bg-blue-800 text-white hover:bg-blue-600 active:bg-blue-700";
-    } else if (secondary) {
-        classes = classes + " border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700";
-    } else if (tertiary) {
-        classes = classes + " bg-gradient-to-br from-[#6025F5] to-[#FF5555] text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50";
-    }
-
-    if (rounded) {
-        classes = classes + " rounded-xl";
-    }
-    if (ghost) {
-        classes = classes + " bg-transparent text-blue-800 hover:text-white";
-    }
+    let classes = className("px-5 py-3 text-base font-medium transition duration-200", {
+        "border-blue-800 bg-blue-800 hover:bg-blue-600 active:bg-blue-700": primary,
+        "border-blue-500 bg-blue-500 hover:bg-blue-600 active:bg-blue-700": secondary,
+        "bg-gradient-to-br from-[#6025F5] to-[#FF5555] transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50": tertiary,
+        "rounded-full": rounded,
+        "bg-none bg-white": ghost,
+        "border-2": primary || secondary || tertiary,
+        "text-white border-2": (primary || secondary || tertiary) && !ghost,
+        "border-[#6025F5]": ghost && tertiary,
+        "hover:text-white": ghost && secondary,
+        "text-blue-800": (ghost && primary) || (ghost && secondary) || (ghost && tertiary)
+    });
 
     return <button className={classes}>{children}</button>
 }

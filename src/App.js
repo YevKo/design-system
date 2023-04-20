@@ -22,6 +22,9 @@ function App() {
       <div>
         <Button secondary ghost>Ghost secondary button</Button>
       </div>
+      <div>
+        <Button tertiary ghost rounded>Ghost tertiary button</Button>
+      </div>
     </div>
   );
 }
