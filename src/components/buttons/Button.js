@@ -1,4 +1,5 @@
 import className from "classnames";
+import { MdSearch, MdTrendingFlat, MdArrowCircleDown } from 'react-icons/md'
 
 function Button({
     children,
@@ -6,9 +7,12 @@ function Button({
     secondary,
     tertiary,
     rounded,
-    ghost
+    ghost,
+    icon,
+    ...rest
 }) {
-    let classes = className("px-5 py-3 text-base font-medium transition duration-200", {
+    // switch classes based on the variant
+    let classes = className(rest.ClassName, "flex justify-center items-center px-5 py-3 text-base font-large transition duration-200", {
         "border-blue-800 bg-blue-800 hover:bg-blue-600 active:bg-blue-700": primary,
         "border-blue-500 bg-blue-500 hover:bg-blue-600 active:bg-blue-700": secondary,
         "bg-gradient-to-br from-[#6025F5] to-[#FF5555] transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50": tertiary,
@@ -21,9 +25,21 @@ function Button({
         "text-blue-800": (ghost && primary) || (ghost && secondary) || (ghost && tertiary)
     });
 
-    return <button className={classes}>{children}</button>
+    // icons map
+    const icons = {
+        'search': <MdSearch/>,
+        'arrow': <MdTrendingFlat />,
+        'download': <MdArrowCircleDown />
+    }
+
+    // parsing all other props like onClick, onMouseMove etc
+    return <button {...rest} className={classes}>
+            {icon ? <span className="mr-2">{icons[icon]}</span> : ''}
+            {children}
+        </button>
 }
 
+// checking that only one main button variant is provided
 Button.propTypes = {
     checkOnlyOneVariationAllowed: ({ primary, secondary, tertiary}) => {
         const count = Number(!!primary) + Number(!!secondary) + Number(!!tertiary)
