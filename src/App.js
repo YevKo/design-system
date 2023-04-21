@@ -1,6 +1,8 @@
+import Route from './components/Route';
 import ButtonPage from './pages/ButtonPage';
-// import AccordionPage from './pages/AccordionPage';
+import AccordionPage from './pages/AccordionPage';
 import DropdownPage from './pages/DropdownPage';
+import Link from './components/links/Link';
 
 function App() {
   const pageName="Page name";
@@ -11,8 +13,17 @@ function App() {
         <h1 className="text-6xl font-semibold leading-[1.1]">{ pageName }</h1>
       </header>
       <div className="text-left py-8 px-4">
-      <DropdownPage />
-      {/* <ButtonPage/> */}
+        <Link to="/accordion">Go to accordions</Link>
+        <Link to="/dropdown">Go to dropdown</Link>
+        <Route path="/buttons">
+          <ButtonPage/>
+        </Route>
+        <Route path="/accordion">
+          <AccordionPage/>
+        </Route>
+        <Route path="/dropdown">
+          <DropdownPage />
+        </Route>
       </div>
     </div>
   );
