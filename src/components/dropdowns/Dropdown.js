@@ -1,9 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 
 function Dropdown({ dropdown, value, onChange } ) {
 
     const [isExpanded, setExpanded] = useState(false);
+    const dropdownEl = useRef();
+
+    useEffect(() => {
+        const handler = (event) => {
+            if (!dropdownEl.current) {
+                return;
+            }
+
+            (!dropdownEl.current.contains(event.target)) && setExpanded(false) ;
+        }
+
+        document.addEventListener('click', handler, true);
+
+        return () => {
+            document.removeEventListener('click', handler);
+        };
+
+    }, []);
 
     const handleDropdownOpen = () => {
         setExpanded(!isExpanded);
@@ -15,7 +33,7 @@ function Dropdown({ dropdown, value, onChange } ) {
     }
 
     return (
-        <div className="inline-block relative">
+        <div ref={dropdownEl} className="dropdown inline-block relative">
             <button onClick={handleDropdownOpen} className="font-semibold outline-none focus:outline-none border px-3 py-1 bg-white rounded-sm flex items-center min-w-32">
                 <span className="pr-1">{ value ? value : dropdown.label} </span>
                 { isExpanded ? <MdArrowDropUp/>: <MdArrowDropDown/>}

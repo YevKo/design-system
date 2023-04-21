@@ -12,6 +12,13 @@ function DropdownPage() {
                 { 'SV': 'Swedish' },
             ]
         },
+        {
+            label: 'User menu',
+            options: [
+                { 'acc': 'My account' },
+                { 'logout' : 'Logout' },
+            ]
+        },
     ];
 
     const [selected, setSelected] = useState(null);
