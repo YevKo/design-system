@@ -4,7 +4,7 @@ import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from "react-icons/
 
 const AccordionItem = ({ title, children, index, activeIndex, onClick }) => {
 
-    const isExpanded = index == activeIndex;
+    const isExpanded = index === activeIndex;
 
     return (
         <div className="flex flex-col justify-center">

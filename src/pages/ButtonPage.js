@@ -4,7 +4,7 @@ function buttonPage() {
   return (
     <div className="ButtonPage">
 
-      <div className="flex flex-col gap-8 text-left py-8">
+      <div className="flex flex-col gap-8">
         <article className="flex flex-col gap-3 items-center">
           <header><h2 className="text-4xl font-semibold leading-snug mb-4">Primary button variants</h2></header>
           <div>

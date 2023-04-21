@@ -1,5 +1,5 @@
 import className from "classnames";
-import { MdSearch, MdTrendingFlat, MdArrowCircleDown } from 'react-icons/md'
+import { MdSearch, MdTrendingFlat, MdArrowCircleDown } from 'react-icons/md';
 
 function Button({
     children,
