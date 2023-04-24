@@ -8,6 +8,7 @@ function SidebarMenu() {
         { text: 'Buttons', path: '/'},
         { text: 'Accordion', path: '/accordion'},
         { text: 'Dropdown', path: '/dropdown'},
+        { text: 'Modal', path: '/modal'}
     ];
 
     const renderedLinks = links.map((link) => {
@@ -16,8 +17,8 @@ function SidebarMenu() {
     return (
         <nav id="components" className="space-y-2">
             <ul>
-                { renderedLinks.map((link) => {
-                    return <li className="mb-2">{link}</li>
+                { renderedLinks.map((link, index) => {
+                    return <li key={index} className="mb-2">{link}</li>
                 })}
             </ul>
         </nav>

@@ -2,6 +2,7 @@ import Route from './components/Route';
 import ButtonPage from './pages/ButtonPage';
 import AccordionPage from './pages/AccordionPage';
 import DropdownPage from './pages/DropdownPage';
+import ModalPage from './pages/ModalPage';
 import Sidebar from './components/sidebar/Sidebar';
 import useNavigation from './hooks/use-navigation';
 
@@ -14,6 +15,7 @@ function App() {
       case '/': return pageName = "Buttons"
       case '/accordion': return pageName = "Accordion"
       case '/dropdown': return pageName = "Dropdown"
+      case '/modal': return pageName = "Modal"
     }
   }
 
@@ -33,6 +35,9 @@ function App() {
           </Route>
           <Route path="/dropdown">
             <DropdownPage />
+          </Route>
+          <Route path="/modal">
+            <ModalPage />
           </Route>
         </div>
       </div>
