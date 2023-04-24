@@ -1,0 +1,9 @@
+{
+    "users":
+    [
+        { "name": "Andrey", "color": "bg-green-700", "age": 38},
+        { "name": "Yevgeniya", "color": "bg-black", "age": 37},
+        { "name": "Veronika", "color": "bg-purple-800", "age": 10},
+        { "name": "Daniel", "color": "bg-rose-900", "age": 6}
+    ]
+}

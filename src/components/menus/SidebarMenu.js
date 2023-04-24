@@ -8,7 +8,8 @@ function SidebarMenu() {
         { text: 'Buttons', path: '/'},
         { text: 'Accordion', path: '/accordion'},
         { text: 'Dropdown', path: '/dropdown'},
-        { text: 'Modal', path: '/modal'}
+        { text: 'Modal', path: '/modal'},
+        { text: 'Table', path: '/table'}
     ];
 
     const renderedLinks = links.map((link) => {

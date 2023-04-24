@@ -3,6 +3,7 @@ import ButtonPage from './pages/ButtonPage';
 import AccordionPage from './pages/AccordionPage';
 import DropdownPage from './pages/DropdownPage';
 import ModalPage from './pages/ModalPage';
+import TablePage from './pages/TablePage';
 import Sidebar from './components/sidebar/Sidebar';
 import useNavigation from './hooks/use-navigation';
 
@@ -16,6 +17,7 @@ function App() {
       case '/accordion': return pageName = "Accordion"
       case '/dropdown': return pageName = "Dropdown"
       case '/modal': return pageName = "Modal"
+      case '/table': return pageName = "Table"
     }
   }
 
@@ -38,6 +40,9 @@ function App() {
           </Route>
           <Route path="/modal">
             <ModalPage />
+          </Route>
+          <Route path="/table">
+            <TablePage />
           </Route>
         </div>
       </div>
