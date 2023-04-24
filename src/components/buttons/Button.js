@@ -12,7 +12,7 @@ function Button({
     ...rest
 }) {
     // switch classes based on the variant
-    let classes = className(rest.ClassName, "flex justify-center items-center px-5 py-3 text-base font-large transition duration-200", {
+    let classes = className(rest.className, "flex justify-center items-center px-5 py-3 text-base font-large transition duration-200", {
         "border-blue-800 bg-blue-800 hover:bg-blue-600 active:bg-blue-700": primary,
         "border-blue-500 bg-blue-500 hover:bg-blue-600 active:bg-blue-700": secondary,
         "bg-gradient-to-br from-[#6025F5] to-[#FF5555] transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50": tertiary,
