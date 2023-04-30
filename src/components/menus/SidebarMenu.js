@@ -9,7 +9,8 @@ function SidebarMenu() {
         { text: 'Accordion', path: '/accordion'},
         { text: 'Dropdown', path: '/dropdown'},
         { text: 'Modal', path: '/modal'},
-        { text: 'Table', path: '/table'}
+        { text: 'Table', path: '/table'},
+        { text: 'Counter', path: '/counter'}
     ];
 
     const renderedLinks = links.map((link) => {

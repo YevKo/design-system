@@ -4,6 +4,7 @@ import AccordionPage from './pages/AccordionPage';
 import DropdownPage from './pages/DropdownPage';
 import ModalPage from './pages/ModalPage';
 import TablePage from './pages/TablePage';
+import CounterPage from './pages/CounterPage';
 import Sidebar from './components/sidebar/Sidebar';
 import useNavigation from './hooks/use-navigation';
 
@@ -18,6 +19,7 @@ function App() {
       case '/dropdown': return pageName = "Dropdown"
       case '/modal': return pageName = "Modal"
       case '/table': return pageName = "Table"
+      case '/counter': return pageName = "Counter"
     }
   }
 
@@ -43,6 +45,9 @@ function App() {
           </Route>
           <Route path="/table">
             <TablePage />
+          </Route>
+          <Route path="/counter">
+            <CounterPage initialCount={20}/>
           </Route>
         </div>
       </div>
